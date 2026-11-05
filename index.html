@@ -162,8 +162,8 @@
         <!-- LOGO & KEY ART -->
         <div class="key-art-horizontal">
             <div class="elsa-silhouette-horizontal">
-                <svg class="elsa-svg" viewBox="0 0 100 120" xmlns="http://w3.org">
-                    <path d="M50,25 C52,25 54,22 53,19 C52,16 48,15 47,18 C46,21 48,25 50,25 Z M48,26 C45,28 42,32 40,36 C39,38 37,42 36,46 C37,46 39,45 40,43 C42,40 45,34 47,29 Z M52,26 C56,28 64,28 72,25 C80,22 88,17 92,15 C92,15 90,18 85,21 C80,24 71,28 62,30 C58,31 54,30 52,29 Z M48,32 C49,36 48,42 45,48 C43,52 38,55 35,57 C37,59 40,58 43,55 C47,51 51,44 51,35 Z M53,31 C53,35 55,42 58,47 C61,52 65,56 69,58 C67,59 64,57 61,54 C57,50 54,43 53,33 Z M45,55 C48,65 42,80 34,95 C26,110 10,120 10,120 C30,118 55,105 65,90 C75,105 100,118 120,120 C120,120 104,110 96,95 C88,80 82,65 85,55 Z" fill="rgb(133, 206, 228)"/>
+                <svg class="elsa-svg" viewBox="0 0 120 120" xmlns="http://w3.org" fill="currentColor">
+                    <path d="M50,25 C52,25 54,22 53,19 C52,16 48,15 47,18 C46,21 48,25 50,25 Z M48,26 C45,28 42,32 40,36 C39,38 37,42 36,46 C37,46 39,45 40,43 C42,40 45,34 47,29 Z M52,26 C56,28 64,28 72,25 C80,22 88,17 92,15 C92,15 90,18 85,21 C80,24 71,28 62,30 C58,31 54,30 52,29 Z M48,32 C49,36 48,42 45,48 C43,52 38,55 35,57 C37,59 40,58 43,55 C47,51 51,44 51,35 Z M53,31 C53,35 55,42 58,47 C61,52 65,56 69,58 C67,59 64,57 61,54 C57,50 54,43 53,33 Z M45,55 C48,65 42,80 34,95 C26,110 10,120 10,120 C30,118 55,105 65,90 C75,105 100,118 120,120 C120,120 104,110 96,95 Z" />
                 </svg>
             </div>
             <div class="title-treatment">
@@ -173,95 +173,36 @@
             </div>
         </div>
 
-        <!-- MTI CREDITS -->
+        <!-- BILLING CREDITS -->
         <div class="billing-credits-box">
             <p class="billing-title">Music and Lyrics by</p>
-            <p style="color: white; font-weight: 700; margin-bottom: 4px;">Kristen Anderson-Lopez & Robert Lopez</p>
-            <p class="billing-title">Book by</p>
-            <p style="color: white; font-weight: 700;">Jennifer Lee</p>
+            <p>Kristen Anderson-Lopez and Robert Lopez</p>
+            <p class="billing-title" style="margin-top: 8px;">Book by</p>
+            <p>Jennifer Lee</p>
         </div>
 
-        <!-- LIVE TIMING COUNTDOWN -->
+        <!-- COUNTDOWN TICKER -->
         <div class="countdown-container">
-            <p class="countdown-label" id="timer-title">Countdown to Curtains</p>
+            <p class="countdown-label">Curtain Rises In</p>
             <div class="countdown-digits">
                 <div class="time-box"><span class="number" id="days">00</span><span class="time-unit">Days</span></div>
                 <div class="time-box"><span class="number" id="hours">00</span><span class="time-unit">Hrs</span></div>
-                <div class="time-box"><span class="number" id="minutes">00</span><span class="time-unit">Min</span></div>
-                <div class="time-box"><span class="number" id="seconds">00</span><span class="time-unit">Sec</span></div>
+                <div class="time-box"><span class="number" id="mins">00</span><span class="time-unit">Mins</span></div>
+                <div class="time-box"><span class="number" id="secs">00</span><span class="time-unit">Secs</span></div>
             </div>
         </div>
 
-        <!-- FEATURED CAST ROSTER -->
-        <h2 class="section-heading">Featured Cast</h2>
+        <!-- CAST ROSTER -->
+        <h2 class="section-heading">Cast</h2>
         <div class="cast-grid">
             <div class="cast-member">
                 <p class="role-title">Elsa</p>
-                <p class="actor-name">Kalista</p>
+                <p class="actor-name">To Be Announced</p>
             </div>
             <div class="cast-member">
-Use code with caution.
-Anna
-Hannah
+                <p class="role-title">Anna</p>
+                <p class="actor-name">To Be Announced</p>
+            </div>
+        </div>
 
-
-Kristoff
-Taysum
-
-
-Olaf
-Max
-
-
-Sven
-Ezra
-
-Character Profiles
-
-Elsa
-The elegant Crown Princess born with magical control over ice and winter storms. She wrestles with isolation as she learns to control her legendary powers.
-
-
-Anna
-Elsa's fiercely loyal, highly optimistic younger sister. Energetic, free-spirited, and quick to action, she ventures into the frozen wilderness to save her kingdom.
-
-
-Kristoff
-A rugged ice harvester living deep in the mountains. Though rough around the edges, his bond with his reindeer companion Sven highlights his dependable heart.
-
-
-Olaf
-A magical, innocent snowman brought to life by Elsa's subconscious winter powers. He loves warm hugs and represents the childhood love between the two sisters.
-
-
-Sven
-Kristoff's loyal reindeer sidekick and best friend. He possesses a strong moral compass and acts as Kristoff's trusted conscience throughout their journey.
-Production Runs
-Nov 19–21 &
-Dec 3–5, 2026
-
-Buy Tickets
-
-// Live Countdown Clock Engine targeting November 19, 2026 @ 7:30 PM
-const targetDate = new Date("Nov 19, 2026 19:30:00").getTime();
-const countdownEngine = setInterval(function() {
-const now = new Date().getTime();
-const timeDifference = targetDate - now;
-const d = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-const h = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-const m = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
-const s = Math.floor((timeDifference % (1000 * 60)) / 1000);
-const daysElem = document.getElementById("days");
-const hoursElem = document.getElementById("hours");
-const minutesElem = document.getElementById("minutes");
-const secondsElem = document.getElementById("seconds");
-if(daysElem) daysElem.innerHTML = d < 10 ? "0" + d : d;
-if(hoursElem) hoursElem.innerHTML = h < 10 ? "0" + h : h;
-if(minutesElem) minutesElem.innerHTML = m < 10 ? "0" + m : m;
-if(secondsElem) secondsElem.innerHTML = s < 10 ? "0" + s : s;
-if (timeDifference < 0) {
-clearInterval(countdownEngine);
-const titleElem = document.getElementById("timer-title");
-if(titleElem) titleElem.innerHTML = "The Show is Live!";
-}
-}, 1000);
+        <!-- PERFORMANCE DETAILS & FOOTER -->
