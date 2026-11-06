@@ -1,0 +1,64 @@
+// Tab Switching Logic
+function switchTab(event, tabId) {
+    const contents = document.querySelectorAll('.tab-content');
+    contents.forEach(content => content.classList.remove('active'));
+    
+    const buttons = document.querySelectorAll('.tab-btn');
+    buttons.forEach(btn => btn.classList.remove('active'));
+    
+    document.getElementById(tabId).classList.add('active');
+    
+    if (event && event.currentTarget) {
+        event.currentTarget.classList.add('active');
+    } else {
+        // Fallback if triggered programmatically without event
+        const targetBtn = Array.from(buttons).find(btn => btn.textContent.toLowerCase().includes(tabId.substring(0, 4)));
+        if(targetBtn) targetBtn.classList.add('active');
+    }
+}
+
+// Countdown Timer Logic
+const targetDate = new Date("Nov 19, 2026 19:30:00").getTime();
+
+const countdownEngine = setInterval(function() {
+    const now = new Date().getTime();
+    const timeDifference = targetDate - now;
+    
+    const d = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+    const h = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const m = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+    const s = Math.floor((timeDifference % (1000 * 60)) / 1000);
+    
+    const daysElem = document.getElementById("days");
+    const hoursElem = document.getElementById("hours");
+    const minutesElem = document.getElementById("minutes");
+    const secondsElem = document.getElementById("seconds");
+    
+    if(daysElem) daysElem.innerHTML = d < 10 ? "0" + d : d;
+    if(hoursElem) hoursElem.innerHTML = h < 10 ? "0" + h : h;
+    if(minutesElem) minutesElem.innerHTML = m < 10 ? "0" + m : m;
+    if(secondsElem) secondsElem.innerHTML = s < 10 ? "0" + s : s;
+    
+    if (timeDifference < 0) {
+        clearInterval(countdownEngine);
+        const titleElem = document.getElementById("timer-title");
+        if(titleElem) titleElem.innerHTML = "The Show is Live!";
+    }
+}, 1000);
+
+// Ambient Snow Generation
+const snowCanvas = document.getElementById("snow-canvas");
+const shapes = ["❄", "•", "✧"];
+
+if(snowCanvas) {
+    for (let i = 0; i < 45; i++) {
+        let flake = document.createElement("div");
+        flake.className = "snowflake";
+        flake.innerHTML = shapes[Math.floor(Math.random() * shapes.length)];
+        flake.style.left = Math.random() * 100 + "vw";
+        flake.style.animationDuration = (Math.random() * 6 + 6) + "s";
+        flake.style.animationDelay = Math.random() * 6 + "s";
+        flake.style.fontSize = (Math.random() * 0.7 + 0.5) + "rem";
+        snowCanvas.appendChild(flake);
+    }
+}
